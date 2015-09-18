@@ -1,4 +1,4 @@
 Build
 -----
 
-docker build -t jenkins-php .
+docker build -t iamluc/jenkins-php .
