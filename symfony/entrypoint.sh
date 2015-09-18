@@ -6,4 +6,10 @@ set -e
 usermod -u `stat -c %u /var/www/html` www-data
 groupmod -g `stat -c %g /var/www/html` www-data
 
-exec "$@"
+if [ "$1" = 'apache2ctl' ]; then
+    # let's start as root
+    exec "$@"
+else
+    # change to user www-data
+    su www-data -s /bin/bash -c "$*"
+fi
