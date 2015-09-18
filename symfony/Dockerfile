@@ -4,9 +4,9 @@ ENV DEBIAN_FRONTEND noninteractive
 
 # Base Apache + PHP
 RUN apt-get update && apt-get install --yes \
-    wget \
+    wget git \
     apache2 \
-    php5 php5-sqlite php5-mysql php5-intl \
+    php5 php5-sqlite php5-mysql php5-intl php5-curl \
   && rm -rf /var/lib/apt/lists/* \
   && a2enmod rewrite
 
