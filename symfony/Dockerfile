@@ -25,6 +25,8 @@ COPY vhost.conf /etc/apache2/sites-enabled/000-default.conf
 
 WORKDIR /var/www/html
 
+EXPOSE 80
+
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
 
 CMD ["apache2ctl", "-DFOREGROUND"]
