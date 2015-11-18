@@ -15,6 +15,8 @@ RUN apt-get update \
 
 RUN wget -O /usr/local/bin/composer https://getcomposer.org/composer.phar && chmod +x /usr/local/bin/composer
 
+RUN echo "xdebug.max_nesting_level = 200" >> /etc/php5/mods-available/xdebug.ini
+
 # drop back to the regular jenkins user - good practice
 USER jenkins
 
