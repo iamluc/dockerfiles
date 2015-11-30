@@ -16,7 +16,7 @@ Tips
 Create an alias
 
 ```sh
-alias composer="docker run --rm -it -v $HOME:$HOME -w $PWD -u `id -u`:`id -g` iamluc/composer"
+alias composer="docker run --rm -it -v \$HOME:\$HOME -w \$PWD -u \`id -u\`:\`id -g\` iamluc/composer"
 ```
 
 Share your composer directory.

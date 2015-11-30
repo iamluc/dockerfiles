@@ -16,7 +16,7 @@ Tips
 Create an alias
 
 ```sh
-alias symfony="docker run --rm -it -v $HOME:$HOME -w $PWD -u `id -u`:`id -g` iamluc/sf-installer"
+alias symfony="docker run --rm -it -v \$HOME:\$HOME -w \$PWD -u \`id -u\`:\`id -g\` iamluc/sf-installer"
 ```
 
 Build
