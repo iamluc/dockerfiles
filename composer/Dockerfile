@@ -1,6 +1,7 @@
 FROM alpine:3.2
 
 RUN apk add --update \
+        git \
         php-cli php-phar php-zlib php-json php-zip php-openssl php-curl php-dom php-ctype \
         php-pdo_mysql \
     && rm -rf /var/cache/apk/*
