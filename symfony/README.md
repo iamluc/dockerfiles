@@ -1,15 +1,13 @@
-About
------
-Based on debian jessie.
+### About
+
 Apache + PHP with useful tools (blackfire, composer)
 
-Build
------
+### Tags
 
-docker build -t iamluc/symfony .
+-	[`jessie`, `latest` (Dockerfile)](https://github.com/iamluc/dockerfiles/blob/master/symfony/Dockerfile)
+-	[`7.0` (Dockerfile)](https://github.com/iamluc/dockerfiles/blob/master/symfony/7.0/Dockerfile)
 
-Usage
------
+### Usage
 
 In CLI
 
@@ -29,7 +27,7 @@ app:
         - 80:80
 
     # You will have to export env variables (BLACKFIRE_SERVER_ID BLACKFIRE_SERVER_TOKEN)
-    # before running docker-compose
+    # before running docker-compose. Or comment lines below
     links:
         - blackfire:blackfire
 
@@ -39,3 +37,7 @@ blackfire:
         - BLACKFIRE_SERVER_ID
         - BLACKFIRE_SERVER_TOKEN
 ```
+
+### Build
+
+docker build -t iamluc/symfony .
