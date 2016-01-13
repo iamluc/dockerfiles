@@ -1,36 +1,31 @@
-About
------
+### About
 
 Small composer image based on Alpine linux (~21 Mo)
 
-Usage
------
+### Usage
 
-```sh
-docker run --rm -it -v $HOME:$HOME -w $PWD -u `id -u`:`id -g` iamluc/composer
+```console
+$ docker run --rm -it -v $HOME:$HOME -w $PWD -u `id -u`:`id -g` iamluc/composer
 ```
 
-Tips
-----
+### Tips
 
 Create an alias
 
-```sh
-alias composer="docker run --rm -it -v \$HOME:\$HOME -w \$PWD -u \`id -u\`:\`id -g\` iamluc/composer"
+```console
+$ alias composer="docker run --rm -it -v \$HOME:\$HOME -w \$PWD -u \`id -u\`:\`id -g\` iamluc/composer"
 ```
 
 Share your composer directory.
 Add `-v $HOME/.composer:/.composer`
 
-Warning
--------
+### Warning
 
 Composer is always called with "--ansi", and with "--ignore-platform-reqs" when update/install commands
 are detected
 
-Build
------
+### Build
 
-```sh
-docker build -t iamluc/sf-composer .
+```console
+$ docker build -t iamluc/sf-composer .
 ```
