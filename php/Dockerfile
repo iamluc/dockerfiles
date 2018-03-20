@@ -1,4 +1,4 @@
-FROM php:7.0-cli
+FROM php:7.2-cli
 
 RUN mkdir /app /home/app \
     && useradd -d /home/app app \
