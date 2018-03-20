@@ -21,7 +21,7 @@ RUN pecl install amqp-1.7.0 && \
     echo "extension=apc.so" > /usr/local/etc/php/conf.d/ext-apcu_bc.ini && \
     pecl install uuid && \
     echo "extension=uuid.so" > /usr/local/etc/php/conf.d/ext-uuid.ini && \
-    pecl install redis-3.0.0 && \
+    pecl install redis-3.1.6 && \
     echo "extension=redis.so" > /usr/local/etc/php/conf.d/ext-redis.ini
 
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
