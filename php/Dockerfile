@@ -5,7 +5,17 @@ RUN mkdir /app /home/app \
     && chown -R app:app /app /home/app
 
 RUN curl -Lo /usr/local/bin/composer https://getcomposer.org/composer.phar && chmod +x /usr/local/bin/composer
+
 RUN curl -Lo /usr/local/bin/gosu https://github.com/tianon/gosu/releases/download/1.10/gosu-amd64 && chmod +x /usr/local/bin/gosu
+
+RUN curl -Lo phive.phar https://phar.io/releases/phive.phar && \
+    curl -Lo phive.phar.asc https://phar.io/releases/phive.phar.asc && \
+    mkdir ~/.gnupg && echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf && \
+    gpg --no-tty --keyserver hkps.pool.sks-keyservers.net --recv-keys 0x9D8A98B29B2D5D79 && \
+    gpg --no-tty --verify phive.phar.asc phive.phar && \
+    rm phive.phar.asc && \
+    chmod +x phive.phar && \
+    mv phive.phar /usr/local/bin/phive
 
 RUN apt-get update && apt-get install -y \
         git \
