@@ -3,9 +3,10 @@ FROM php:7.2-cli
 RUN apt-get update && apt-get install -y \
         git gpg \
         libicu-dev zlib1g-dev librabbitmq-dev uuid-dev libpq-dev libpcre3-dev libldap-2.4-2 libldap2-dev libsasl2-dev \
+        libpng-dev libfreetype6-dev libjpeg62-turbo-dev \
     && rm -rf /var/lib/apt/lists/* \
     && /usr/local/bin/docker-php-ext-configure ldap --with-ldap-sasl \
-    && docker-php-ext-install pdo_mysql pdo_pgsql intl zip mbstring pcntl ldap
+    && docker-php-ext-install pdo_mysql pdo_pgsql intl zip mbstring pcntl ldap gd
 
 RUN pecl install amqp-1.7.0 && \
     echo "extension=amqp.so" > /usr/local/etc/php/conf.d/ext-amqp.ini && \
